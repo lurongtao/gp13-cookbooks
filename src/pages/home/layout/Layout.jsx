@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 import { TabBar } from 'antd-mobile'
 
-// import cookbook from '../../assets/images/cookbook.png'
+import { CookBook } from '../cookbook/'
+
+import cookbook from 'assets/images/cookbook.png'
+import cookbookActive from 'assets/images/cookbook-active.png'
+import location from 'assets/images/location.png'
+import locationActive from 'assets/images/location-active.png'
+import menu from 'assets/images/menu.png'
+import menuActive from 'assets/images/menu-active.png'
+import more from 'assets/images/more.png'
+import moreActive from 'assets/images/more-active.png'
 
 export default class Layout extends Component {
   constructor(props) {
@@ -17,7 +26,7 @@ export default class Layout extends Component {
       <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
         <TabBar
           unselectedTintColor="#949494"
-          tintColor="#33A3F4"
+          tintColor="#000"
           barTintColor="white"
           hidden={this.state.hidden}
         >
@@ -27,13 +36,13 @@ export default class Layout extends Component {
             icon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+              background: `url(${cookbook}) center center /  32px 32px no-repeat` }}
             />
             }
             selectedIcon={<div style={{
               width: '22px',
               height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+              background: `url(${cookbookActive}) center center / 32px 32px no-repeat` }}
             />
             }
             selected={this.state.selectedTab === 'cookbook'}
@@ -42,23 +51,22 @@ export default class Layout extends Component {
                 selectedTab: 'cookbook',
               });
             }}
-            data-seed="logId"
           >
-            <div>a</div>
+            <CookBook></CookBook>
           </TabBar.Item>
           <TabBar.Item
             icon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                background: `url(${menu}) center center /  21px 21px no-repeat` }}
               />
             }
             selectedIcon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                background: `url(${menuActive}) center center /  21px 21px no-repeat` }}
               />
             }
             title="分类"
@@ -69,7 +77,6 @@ export default class Layout extends Component {
                 selectedTab: 'category',
               });
             }}
-            data-seed="logId1"
           >
             <div>b</div>
           </TabBar.Item>
@@ -78,14 +85,14 @@ export default class Layout extends Component {
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                background: `url(${location}) center center /  21px 21px no-repeat` }}
               />
             }
             selectedIcon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                background: `url(${locationActive}) center center /  21px 21px no-repeat` }}
               />
             }
             title="美食地图"
@@ -100,8 +107,8 @@ export default class Layout extends Component {
             <div>c</div>
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+            icon={{ uri: more }}
+            selectedIcon={{ uri: moreActive }}
             title="更多"
             key="profile"
             selected={this.state.selectedTab === 'profile'}
