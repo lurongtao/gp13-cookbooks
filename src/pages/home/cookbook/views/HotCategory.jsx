@@ -12,8 +12,8 @@ export default class HotCategory extends Component {
   }
 
   async componentDidMount() {
-    let result = await http.get('/api/hot-category')
-    let data = result.map((value, index) => {
+    let result = await http.get('/api/hot')
+    let data = result['hot-category'].map((value, index) => {
       return {
         icon: value.img,
         text: value.title

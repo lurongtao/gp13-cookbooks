@@ -41,9 +41,9 @@ const border = (
         (min-resolution: 144dpi) and (max-resolution: 239dpi),
         (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
           width: 200%;
-            height: 200%;
-            transform: scale(0.5);
-            border-radius: ${props => calRadius(props, 2)};
+          height: 200%;
+          transform: scale(0.5);
+          border-radius: ${props => calRadius(props, 2)};
       }
 
       @media screen and (min--moz-device-pixel-ratio: 2.5),

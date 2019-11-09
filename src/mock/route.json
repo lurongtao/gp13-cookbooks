@@ -1,0 +1,6 @@
+{
+  "/api/hot": "/hot",
+  "/api/cate": "/cate",
+  "/api/detail": "/detail",
+  "/api/list": "/list"
+}

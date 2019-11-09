@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd-mobile": "^2.3.1",
+    "better-scroll": "^1.15.2",
     "react": "16.8",
     "react-dom": "16.8",
     "react-scripts": "3.2.0",
@@ -14,7 +15,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
-    "mock:hotcate": "json-server ./src/mock/cookbook-category-hot.json --port 9000 --watch"
+    "mock:hotcate": "json-server ./src/mock/cookbook-category-hot.json --port 9000 --watch",
+    "mock": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 9000 --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
