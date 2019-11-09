@@ -11,7 +11,7 @@ export default class CookBook extends Component {
       <div>
         <Header></Header>
         <Swiper></Swiper>
-        <Search></Search>
+        <Search hasBorder={true} borderColor="#ee742f" width={'1px'}></Search>
         <HotCategory></HotCategory>
       </div>
     )

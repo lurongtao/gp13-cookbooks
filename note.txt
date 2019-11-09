@@ -8,3 +8,6 @@ react-app-rewired
 customize-cra
 
 charles
+
+dpr: device pixel ratio
+
