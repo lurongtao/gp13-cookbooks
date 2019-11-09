@@ -17,3 +17,23 @@ export const SwiperWrap = styled.div `
     width: 100%;
   }
 `
+
+export const GridWrap = styled.div `
+  > div:first-child {
+    height: .5rem;
+    padding-left: .2rem;
+    background: #fff;
+    line-height: .5rem;
+    border-bottom: solid 1px #ccc;
+  }
+  .grid-item {
+    img {
+      width: .8rem;
+      height: .8rem;
+      border-radius: .1rem;
+    }
+    > div {
+      margin-top: .1rem;
+    }
+  }
+`

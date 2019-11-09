@@ -3,11 +3,11 @@ module.exports = function(app) {
   app.use(
     '/api',
     proxy({
-      target: 'http://10.9.47.191:3333/',
+      target: 'http://localhost:9000/',
       changeOrigin: true,
-      // pathRewrite: {
-      //   '^/api': ''
-      // }
+      pathRewrite: {
+        '^/api': ''
+      }
     })
   )
 }

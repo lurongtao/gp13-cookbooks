@@ -1,30 +1,49 @@
 import React, { Component } from 'react'
 import { Grid } from 'antd-mobile'
+import http from 'utils/http'
+
+import {
+  GridWrap
+} from './styledCookbook'
 
 export default class HotCategory extends Component {
   state = {
-    data1: Array.from(new Array(9)).map((_val, i) => ({
-      icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `name${i}`,
-    }))
+    data: []
+  }
+
+  async componentDidMount() {
+    let result = await http.get('/api/hot-category')
+    let data = result.map((value, index) => {
+      return {
+        icon: value.img,
+        text: value.title
+      }
+    })
+    this.setState({
+      data
+    })
   }
 
   render() {
     return (
-      <div>
+      <GridWrap>
+        <div>
+          热门分类
+        </div>
         <Grid 
-          data={this.state.data1}
+          data={this.state.data}
           columnNum={3}
+          hasLine={false}
           renderItem={dataItem => (
-            <div style={{ padding: '12.5px' }}>
-              <img src={dataItem.icon} style={{ width: '75px', height: '75px' }} alt="" />
-              <div style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
-                <span>I am title..</span>
+            <div className="grid-item">
+              <img src={dataItem.icon} alt="" />
+              <div>
+                <span>{dataItem.text}</span>
               </div>
             </div>
           )}
         />
-      </div>
+      </GridWrap>
     )
   }
 }
