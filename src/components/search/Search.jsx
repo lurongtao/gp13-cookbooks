@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import { SearchWrap, SearchInnerWrap, BorderedSearchInnerWrap } from './styledSearch'
+import border from '../styled/border'
+
+import { SearchWrap, SearchInnerWrap } from './styledSearch'
 
 import searchImg from 'assets/images/search.png'
 
@@ -11,13 +13,13 @@ export default class Search extends Component {
   }
 
   render() {
-    let Wrap = this.props.hasBorder ? BorderedSearchInnerWrap : SearchInnerWrap
+    let InnerWrap = this.props.hasBorder ? border({comp: SearchInnerWrap}) : SearchInnerWrap
     return (
       <SearchWrap>
-        <Wrap {...this.props}>
+        <InnerWrap {...this.props}>
           <img src={searchImg} alt=""/>
           <span>想吃什么搜这里，如川菜</span>
-        </Wrap>
+        </InnerWrap>
       </SearchWrap>
     )
   }

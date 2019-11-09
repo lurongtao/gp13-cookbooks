@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
+const calRadius = (props, ratio) => {
+  return `${(props.radius || 0) * ratio}px;`
+}
+
 const border = (
   {
-    comp = null,
-    radius = 10,
-    width = 0,
-    color = 'red',
-    style = 'solid'
+    comp = null
   }
 ) => {
   return styled(comp) `
     position: relative;
-    border-radius: ${radius}px;
+    border-radius: ${props => calRadius(props, 1)};
 
     &::after {
       content: "";
@@ -20,9 +20,9 @@ const border = (
       z-index: 999;
       top: 0;
       left: 0;
-      border-color: ${color};
-      border-style: ${style};
-      border-width: ${width};
+      border-color: ${props => props.color || '#ccc'};
+      border-style: ${props => props.style || 'solid'};
+      border-width: ${props => props.width || '1px'};
       transform-origin: 0 0;
 
       @media screen and (max--moz-device-pixel-ratio: 1.49),
@@ -32,7 +32,7 @@ const border = (
         (max-resolution: 1.49dppx) {
           width: 100%;
           height: 100%;
-          border-radius: ${radius}px;
+          border-radius: ${props => calRadius(props, 1)};
       }
 
       @media screen and (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49),
@@ -43,7 +43,7 @@ const border = (
           width: 200%;
             height: 200%;
             transform: scale(0.5);
-            border-radius: ${radius * 2}px;
+            border-radius: ${props => calRadius(props, 2)};
       }
 
       @media screen and (min--moz-device-pixel-ratio: 2.5),
@@ -54,7 +54,7 @@ const border = (
           width: 300%;
           height: 300%;
           transform: scale(0.333333);
-          border-radius: ${radius * 3}px;
+          border-radius: ${props => calRadius(props, 3)};
       }
     }
   `

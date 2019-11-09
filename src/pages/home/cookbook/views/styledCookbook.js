@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import border from 'components/styled/border.js'
 
 export const HeaderWrap = styled.div `
   height: .44rem;
@@ -19,13 +20,6 @@ export const SwiperWrap = styled.div `
 `
 
 export const GridWrap = styled.div `
-  > div:first-child {
-    height: .5rem;
-    padding-left: .2rem;
-    background: #fff;
-    line-height: .5rem;
-    border-bottom: solid 1px #ccc;
-  }
   .grid-item {
     img {
       width: .8rem;
@@ -34,6 +28,25 @@ export const GridWrap = styled.div `
     }
     > div {
       margin-top: .1rem;
+    }
+  }
+`
+
+export const TitleWrap = border({
+  comp: styled.div `
+    height: .5rem;
+    padding-left: .2rem;
+    background: #fff;
+    line-height: .5rem;
+  `
+})
+
+export const Top10Wrap = styled.div `
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 50%;
     }
   }
 `

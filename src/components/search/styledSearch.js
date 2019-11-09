@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import border from '../styled/border'
-
 const SearchInnerWrap = styled.div `
   width: 100%;
   height: 100%;
@@ -25,15 +23,7 @@ const SearchWrap = styled.div `
   align-items: center;
 `
 
-const BorderedSearchInnerWrap = border({
-  comp: SearchInnerWrap,
-  color: props => props.borderColor,
-  radius: 6,
-  width: props => props.width
-})
-
 export {
   SearchWrap,
-  BorderedSearchInnerWrap,
   SearchInnerWrap
 }

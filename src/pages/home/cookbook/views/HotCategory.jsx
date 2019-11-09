@@ -3,7 +3,7 @@ import { Grid } from 'antd-mobile'
 import http from 'utils/http'
 
 import {
-  GridWrap
+  GridWrap, TitleWrap
 } from './styledCookbook'
 
 export default class HotCategory extends Component {
@@ -19,6 +19,10 @@ export default class HotCategory extends Component {
         text: value.title
       }
     })
+    data.push({
+      icon: '',
+      text: '更多...'
+    })
     this.setState({
       data
     })
@@ -27,9 +31,9 @@ export default class HotCategory extends Component {
   render() {
     return (
       <GridWrap>
-        <div>
+        <TitleWrap width="0 0 1px 0">
           热门分类
-        </div>
+        </TitleWrap>
         <Grid 
           data={this.state.data}
           columnNum={3}
