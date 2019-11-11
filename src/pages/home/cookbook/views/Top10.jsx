@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import http from 'utils/http'
+import { connect } from 'react-redux'
 
 import {
   Top10Wrap
 } from './styledCookbook'
 
-export default class Top10 extends Component {
-  state = {
-    list: []
+const mapState = (state) => {
+  return {
+    list: state.cookbook.list
   }
+}
 
+class Top10 extends Component {
   async componentDidMount() {
-    let result = await http.get('/api/list')
-    this.setState({
-      list: result.data
-    })
+    
   }
 
   render() {
@@ -23,7 +22,7 @@ export default class Top10 extends Component {
         <header>精品好菜</header>
         <ul>
           {
-            this.state.list.slice(0, 10).map((value, index) => {
+            this.props.list.slice(0, 10).map((value, index) => {
               return (
                 <li key={value.id}>
                   <dl>
@@ -42,3 +41,5 @@ export default class Top10 extends Component {
     )
   }
 }
+
+export default connect(mapState)(Top10)

@@ -13,10 +13,10 @@ export default class Search extends Component {
   }
 
   render() {
-    let InnerWrap = this.props.hasBorder ? border({comp: SearchInnerWrap}) : SearchInnerWrap
+    let InnerWrap = this.props.hasBorder ? border({comp: SearchInnerWrap, ...this.props}) : SearchInnerWrap
     return (
       <SearchWrap>
-        <InnerWrap {...this.props}>
+        <InnerWrap>
           <img src={searchImg} alt=""/>
           <span>想吃什么搜这里，如川菜</span>
         </InnerWrap>
