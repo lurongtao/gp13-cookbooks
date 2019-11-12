@@ -25,7 +25,7 @@ module.exports = override(
 
   addDecoratorsLegacy(),
 
-  setWebpackPublicPath('http://dev.gp13.com:8848/')
+  // setWebpackPublicPath('http://dev.gp13.com/')
 )
 
 // const devServer = () => {

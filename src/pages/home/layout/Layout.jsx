@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { TabBar } from 'antd-mobile'
 
 import { CookBook } from '../cookbook/'
+import { Category } from '../category/'
 import Map from '../map/Map'
 
 import cookbook from 'assets/images/cookbook.png'
@@ -17,7 +18,7 @@ export default class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'cookbook',
+      selectedTab: 'category',
       hidden: false,
       fullScreen: true
     }
@@ -79,7 +80,7 @@ export default class Layout extends Component {
               });
             }}
           >
-            <div>b</div>
+            <Category></Category>
           </TabBar.Item>
           <TabBar.Item
             icon={
