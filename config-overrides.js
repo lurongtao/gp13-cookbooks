@@ -1,5 +1,14 @@
 const path = require('path')
-const { override, fixBabelImports, addWebpackAlias } = require('customize-cra')
+const cc = require('customize-cra')
+let { 
+  override, 
+  fixBabelImports, 
+  addWebpackAlias, 
+  addDecoratorsLegacy, 
+  setWebpackPublicPath
+} = cc
+
+console.log(cc)
 
 module.exports = override(
   fixBabelImports('import', {
@@ -12,7 +21,11 @@ module.exports = override(
     "components": path.resolve(__dirname, './src/components/'),
     "utils": path.resolve(__dirname, './src/utils/'),
     "pages": path.resolve(__dirname, './src/pages/')
-  })
+  }),
+
+  addDecoratorsLegacy(),
+
+  setWebpackPublicPath('http://dev.gp13.com:8848/')
 )
 
 // const devServer = () => {

@@ -1,4 +1,4 @@
-import CookBook from './views/CookBook'
+import CookBook from './views/cookbook/container/CookBook'
 import reducer from './reducer'
 
 export {

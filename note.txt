@@ -11,3 +11,27 @@ charles
 
 dpr: device pixel ratio
 
+http://es6.ruanyifeng.com/
+
+2019-11-12
+一、前后端不分离的发布模式
+将前端页面发布到后端
+域名应该解析到后端服务器
+
+nginx
+mac: /usr/local/etc/nginx
+cmd+shift+g
+
+Mac:
+nginx
+nginx -s stop
+
+windows:
+start nginx
+nginx -s stop
+
+域名->nginx(80)
+- root: index.html
+- /api: express
+
+二、前后端分离的发布模式

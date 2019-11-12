@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.7.0",
     "antd-mobile": "^2.3.1",
     "better-scroll": "^1.15.2",
     "react": "16.8",
@@ -19,7 +20,8 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "mock:hotcate": "json-server ./src/mock/cookbook-category-hot.json --port 9000 --watch",
-    "mock": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 9000 --watch"
+    "mock:be": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 9000 --watch",
+    "mock:fe": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 8888 --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
