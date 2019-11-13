@@ -2,13 +2,12 @@ import React from 'react'
 import { MenuWrap } from './styledMenu'
 
 export default function MenuUI(props) {
-  let resource = props.menu && (props.type === 'category' ? props.menu.category : props.menu.material)
   return (
     <MenuWrap>
       <div>
         <ul>
           {
-            props.menu && Object.keys(resource).map((value, index) => {
+            props.tabs.map((value, index) => {
               return (
                 <li 
                   key={value+index}
@@ -23,7 +22,7 @@ export default function MenuUI(props) {
       <div>
         <ul>
           {
-            props.menu && resource[props.tab].map((value, index) => {
+            props.contents.map((value, index) => {
               return <li key={value+index}>{value}</li>
             })
           }

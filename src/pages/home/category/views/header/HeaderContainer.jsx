@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
 import HeaderUI from './HeaderUI'
 
-export default class HeaderContainer extends Component {
+@withRouter
+class HeaderContainer extends Component {
   state = {
     type: 'category'
   }
@@ -11,6 +13,7 @@ export default class HeaderContainer extends Component {
     this.setState({
       type
     })
+    this.props.history.push('/index/' + type)
   }
 
   render() {
@@ -22,3 +25,5 @@ export default class HeaderContainer extends Component {
     )
   }
 }
+
+export default HeaderContainer

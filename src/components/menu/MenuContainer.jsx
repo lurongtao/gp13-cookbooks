@@ -7,8 +7,9 @@ import http from 'utils/http'
 export default class MenuContainer extends Component {
   state = {
     menu: null,
+    // 不要试图用两个组件同时更新一个数据
     tab: '',
-    type: 'category'
+    initTab: this.props.type === 'category' ? '热门' : '肉类'
   }
 
   handleClickTab = (tab) => {
@@ -21,25 +22,21 @@ export default class MenuContainer extends Component {
     let result = await http.get('/api/cate')
     let data = result.data
     this.setState({
-      menu: data,
-      tab: '热门'
+      menu: data
     })
-
-    setTimeout(() => {
-      this.setState({
-        type: 'material',
-        tab: '肉类'
-      })
-    }, 2000)
   }
 
   render() {
+    let tab = this.state.tab || this.state.initTab
+    let data = this.state.menu ? this.state.menu[this.props.type] : {}
+    let tabs = Object.keys(data)
+    let contents = data[tab] || []
     return (
       <MenuUI
-        menu={this.state.menu}
-        tab={this.state.tab}
+        tab={tab}
+        tabs={tabs}
+        contents={contents}
         onClickTab={this.handleClickTab}
-        type={this.state.type}
       ></MenuUI>
     )
   }
