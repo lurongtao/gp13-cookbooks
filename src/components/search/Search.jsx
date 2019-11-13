@@ -16,7 +16,7 @@ export default class Search extends Component {
     let InnerWrap = this.props.hasBorder ? border({comp: SearchInnerWrap, ...this.props}) : SearchInnerWrap
     return (
       <SearchWrap>
-        <InnerWrap>
+        <InnerWrap { ...this.props }>
           <img src={searchImg} alt=""/>
           <span>想吃什么搜这里，如川菜</span>
         </InnerWrap>

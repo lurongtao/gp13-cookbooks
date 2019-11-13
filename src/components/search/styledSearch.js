@@ -6,7 +6,7 @@ const SearchInnerWrap = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: ${props => props.background || '#fff'};
 
   img {
     width: .2rem;

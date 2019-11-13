@@ -8,8 +8,6 @@ let {
   setWebpackPublicPath
 } = cc
 
-console.log(cc)
-
 module.exports = override(
   fixBabelImports('import', {
     libraryName: 'antd-mobile',
