@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { TabBar } from 'antd-mobile'
+import { withRouter } from 'react-router-dom'
 
 import { CookBook } from '../cookbook/'
 import { Category } from '../category/'
 import Map from '../map/Map'
+import Profile from '../profile/Profile'
 
 import cookbook from 'assets/images/cookbook.png'
 import cookbookActive from 'assets/images/cookbook-active.png'
@@ -14,11 +16,12 @@ import menuActive from 'assets/images/menu-active.png'
 import more from 'assets/images/more.png'
 import moreActive from 'assets/images/more-active.png'
 
-export default class Layout extends Component {
+@withRouter
+class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'category',
+      selectedTab: 'profile',
       hidden: false,
       fullScreen: true
     }
@@ -78,6 +81,7 @@ export default class Layout extends Component {
               this.setState({
                 selectedTab: 'category',
               });
+              this.props.history.push('/index/category')
             }}
           >
             <Category></Category>
@@ -120,10 +124,12 @@ export default class Layout extends Component {
               });
             }}
           >
-            <div>d</div>
+            <Profile></Profile>
           </TabBar.Item>
         </TabBar>
       </div>
     )
   }
 }
+
+export default Layout
