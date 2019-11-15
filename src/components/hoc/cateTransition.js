@@ -6,16 +6,15 @@ export default (Comp) => {
   @withRouter
   class CateTransition extends React.Component {
     render() {
-      console.log(this.props)
       return (
         <CSSTransition
           in={!!this.props.match}
           timeout={1000}
           classNames={{
             enter: 'animated',
-            leave: 'animated',
+            exit: 'animated',
             enterActive: this.props.type === 'category' ? 'slideInLeft' : 'slideInRight',
-            leaveActive: this.props.type === 'category' ? 'slideOutLeft' : 'slideOutRight'
+            exitActive: this.props.type === 'category' ? 'slideOutLeft' : 'slideOutRight'
           }}
           unmountOnExit
           mountOnEnter
