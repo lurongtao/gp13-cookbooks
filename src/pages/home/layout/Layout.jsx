@@ -21,7 +21,7 @@ class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTab: 'category',
+      selectedTab: 'map',
       hidden: false,
       fullScreen: true
     }
