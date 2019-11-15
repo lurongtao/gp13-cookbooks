@@ -1,94 +1,39 @@
-// import React, { useState } from 'react';
-// import { Container, Button, Alert } from 'react-bootstrap';
-// import { CSSTransition } from 'react-transition-group';
+import React, { Component } from 'react'
 
-// import './styles.css'
+import { Switch } from 'antd-mobile'
 
-// // hooks
-// function Example() {
-//   const [showButton, setShowButton] = useState(true);
-//   const [showMessage, setShowMessage] = useState(false);
-//   return (
-//     <Container style={{ paddingTop: '2rem' }}>
-//       {showButton && (
-//         <Button
-//           onClick={() => setShowMessage(true)}
-//           size="lg"
-//         >
-//           Show Message
-//         </Button>
-//       )}
-//       <CSSTransition
-//         in={showMessage}
-//         timeout={300}
-//         classNames="alert"
-//         unmountOnExit
-//         onEnter={() => setShowButton(false)}
-//         onExited={() => setShowButton(true)}
-//       >
-//         <Alert
-//           variant="primary"
-//           dismissible
-//           onClose={() => setShowMessage(false)}
-//         >
-//           <Alert.Heading>
-//             Animated alert message
-//           </Alert.Heading>
-//           <p>
-//             This alert message is being transitioned in and
-//             out of the DOM.
-//           </p>
-//           <Button onClick={() => setShowMessage(false)}>
-//             Close
-//           </Button>
-//         </Alert>
-//       </CSSTransition>
-//     </Container>
-//   );
-// }
+import connect from 'utils/connect'
 
-// export default Example
+import { switchSync } from '../layout/'
 
-
-import React from 'react'
-import { CSSTransition } from 'react-transition-group'
-
-import './styles.css'
-
-export default class Profile extends React.Component {
-  state = {
-    show: true
-  }
-
-  handleClick = () => {
-    this.setState((prevState) => {
-      return {
-        show: !prevState.show
+@connect({
+  mapState: (state) => {
+    return {
+      checked: state.layout.checked
+    }
+  },
+  mapDispatch: (dispatch) => {
+    return {
+      onSwitch(checked) {
+        dispatch(switchSync(checked))
       }
-    })
+    }
   }
-
+})
+class Profile extends Component {
   render() {
     return (
-      <>
-        <CSSTransition
-          in={this.state.show}
-          classNames={{
-            enterActive: 'animated zoomIn',
-            exitActive: 'animated zoomOut',
+      <div style={{padding: '20px'}}>
+        是否显示地图：
+        <Switch
+          checked={this.props.checked}
+          onChange={(value) => {
+            this.props.onSwitch(value)
           }}
-          timeout={1000}
-          appear={false}
-          unmountOnExit
-          onEnter={()=>{console.log('enter')}}
-          onExit={()=>{console.log('exit')}}
-        >
-          <div>hello</div>
-        </CSSTransition>
-        <div>
-          <button onClick={this.handleClick}>show/hide div</button>
-        </div>
-      </>
+        />
+      </div>
     )
   }
 }
+
+export default Profile
