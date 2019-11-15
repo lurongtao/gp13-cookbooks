@@ -74,9 +74,7 @@ export default class Profile extends React.Component {
         <CSSTransition
           in={this.state.show}
           classNames={{
-            enter: 'animated zoomIn',
             enterActive: 'animated zoomIn',
-            exit: 'animated zoomOut',
             exitActive: 'animated zoomOut',
           }}
           timeout={1000}

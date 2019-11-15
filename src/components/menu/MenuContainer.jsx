@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import cateTransition from 'components/hoc/cateTransition'
 
 import MenuUI from './MenuUI'
 
 import http from 'utils/http'
 
-export default class MenuContainer extends Component {
+@cateTransition
+class MenuContainer extends Component {
   state = {
     menu: null,
     // 不要试图用两个组件同时更新一个数据
@@ -41,3 +43,5 @@ export default class MenuContainer extends Component {
     )
   }
 }
+
+export default MenuContainer

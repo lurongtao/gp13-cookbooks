@@ -1,13 +1,13 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
 
 import Header from '../header/HeaderContainer'
 import Search from 'components/search/Search'
-import Menu from 'components/menu/MenuContainer'
-
 import { CategoryWrap } from './styledCategory'
 
-export default function CategoryUI() {
+import Menu from 'components/menu/MenuContainer'
+import { Route } from 'react-router-dom'
+
+export default function CategoryUI(props) {
   return (
     <CategoryWrap>
       <Header></Header>
@@ -18,19 +18,20 @@ export default function CategoryUI() {
         width={0}
         background={'#eee'}
       ></Search>
-      <Route
-        path="/index/category"
-        render={() => {
-          return <Menu type="category" />
-        }}
-      ></Route>
-      <Route
-        path="/index/material"
-        render={() => {
-          return <Menu type="material" />
-        }}
-      >
-      </Route>
+      <div className="cate-list">
+        <Route
+          path="/index/category"
+          children={() => {
+            return <Menu type="category" />
+          }}
+        />
+        <Route
+          path="/index/material"
+          children={() => {
+            return <Menu type="material" />
+          }}
+        />
+      </div>
     </CategoryWrap>
   )
 }

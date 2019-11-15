@@ -5,4 +5,13 @@ export const CategoryWrap = styled.div `
   display: flex;
   flex-direction: column;
   height: 100%;
+  .cate-list {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    > div {
+      position: absolute;
+      width: 100%;
+    }
+  }
 `
