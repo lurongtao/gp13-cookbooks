@@ -1,14 +1,19 @@
-import React, { Component } from 'react'
-import ListView from './ListView'
-import test from './test'
+import { Component } from 'react'
+import {
+  Map
+} from 'immutable'
+
 export default class Detail extends Component {
   render() {
-    return (
-      <div>
-        <ListView
-          renderRow={test}
-        ></ListView>
-      </div>
-    )
+
+    let map = Map({
+      a: 0, 
+      b: 1
+    })
+
+    let map2 = map.set('a', 0)
+    console.log(map2 === map)
+
+    return null
   }
 }

@@ -6,6 +6,7 @@
     "@babel/plugin-proposal-decorators": "^7.7.0",
     "antd-mobile": "^2.3.1",
     "better-scroll": "^1.15.2",
+    "immutable": "^4.0.0-rc.12",
     "react": "16.8",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "16.8",
