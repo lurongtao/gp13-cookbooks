@@ -15,6 +15,15 @@ export const ListWrap = styled.div `
   .am-navbar {
     background: #ee742f;
   }
+
+  .am-list-view-scrollview {
+    height: 100%;
+    width: 100%;
+  }
+
+  .am-list-view-scrollview-content {
+    width: 100%;
+  }
 `
 
 export const ListItem = border({
