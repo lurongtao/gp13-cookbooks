@@ -6,6 +6,7 @@ import store from './store/'
 
 import { Layout } from './pages/home/layout/'
 import { List } from './pages/list/'
+import Detail from './pages/detail/Detail'
 
 export default class App extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/index" component={Layout}></Route>
             <Route path="/list" component={List}></Route>
+            <Route path="/detail" component={Detail}></Route>
             <Redirect from="/" to="/index"></Redirect>
           </Switch>
         </BrowserRouter>

@@ -23,7 +23,7 @@ export default function MenuUI(props) {
         <ul>
           {
             props.contents.map((value, index) => {
-              return <li key={value+index}>{value}</li>
+              return <li onClick={() => props.onContentClick(value)} key={value+index}>{value}</li>
             })
           }
         </ul>

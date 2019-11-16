@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import cateTransition from 'components/hoc/cateTransition'
+import { withRouter } from 'react-router-dom'
 
 import MenuUI from './MenuUI'
 
 import http from 'utils/http'
 
+@withRouter
 @cateTransition
 class MenuContainer extends Component {
   state = {
@@ -18,6 +20,10 @@ class MenuContainer extends Component {
     this.setState({
       tab
     })
+  }
+
+  handleContentClick = (value) => {
+    this.props.history.push('/list', {text: value})
   }
 
   async componentDidMount() {
@@ -39,6 +45,7 @@ class MenuContainer extends Component {
         tabs={tabs}
         contents={contents}
         onClickTab={this.handleClickTab}
+        onContentClick={this.handleContentClick}
       ></MenuUI>
     )
   }

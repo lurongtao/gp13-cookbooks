@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "mock:hotcate": "json-server ./src/mock/cookbook-category-hot.json --port 9000 --watch",
     "mock:be": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 9000 --watch",
-    "mock:fe": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 8888 --watch"
+    "mock:fe": "json-server ./src/mock/mock.js -r ./src/mock/route.json --port 8888 --watch",
+    "mock:list": "json-server ./src/mock/cookbook-list-2.json --port 7777 --watch"
   },
   "eslintConfig": {
     "extends": "react-app"

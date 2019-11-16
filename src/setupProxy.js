@@ -7,5 +7,16 @@ module.exports = function(app) {
       secure: false,
       changeOrigin: true
     })
+  ),
+  app.use(
+    '/list',
+    proxy({
+      target: 'http://localhost:7777/',
+      secure: false,
+      changeOrigin: true,
+      pathRewrite: {
+        "^/list": ""
+      }
+    })
   )
 }
