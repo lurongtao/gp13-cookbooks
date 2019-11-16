@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import http from 'utils/http'
+import { withRouter } from 'react-router-dom'
 
 import HotCategoryUI from '../ui/HotCategoryUI'
 
-export default class HotCategory extends Component {
+@withRouter
+class HotCategory extends Component {
   state = {
     data: []
+  }
+
+  handleClick = (text) => {
+    this.props.history.push('/list', { text })
   }
 
   async componentDidMount() {
@@ -27,7 +33,9 @@ export default class HotCategory extends Component {
 
   render() {
     return (
-      <HotCategoryUI data={this.state.data}></HotCategoryUI>
+      <HotCategoryUI onClick={this.handleClick} data={this.state.data}></HotCategoryUI>
     )
   }
 }
+
+export default HotCategory

@@ -24,6 +24,9 @@ export default (props) => {
             </div>
           </div>
         )}
+        onClick={(el) => {
+          props.onClick(el.text)
+        }}
       />
     </GridWrap>
   )
