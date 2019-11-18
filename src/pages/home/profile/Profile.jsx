@@ -9,7 +9,7 @@ import { switchSync } from '../layout/'
 @connect({
   mapState: (state) => {
     return {
-      checked: state.layout.checked
+      checked: state.getIn(['layout', 'checked'])
     }
   },
   mapDispatch: (dispatch) => {

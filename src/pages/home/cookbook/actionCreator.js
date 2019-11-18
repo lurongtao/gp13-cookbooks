@@ -1,9 +1,10 @@
 import { LOADDATA } from './actionTypes'
+import { List } from 'immutable'
 import http from 'utils/http.js'
 
 const syncLoadData = list => ({
   type: LOADDATA,
-  list
+  list: List(list)
 })
 
 const asyncLoadData = () => {

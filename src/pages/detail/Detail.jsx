@@ -1,26 +1,32 @@
-import { Component } from 'react'
-import {
-  Map,
-  List,
-  Seq,
-  fromJS,
-  is,
-  Set
-} from 'immutable'
-
-export default class Detail extends Component {
-  render() {
-    const { Range } = require('immutable');
-    const aRange = Range(1, Infinity)
-      .skip(1000)
-      .map(n => -n)
-      .filter(n => n % 2 === 0)
-      .take(2)
-      .reduce((r, n) => r * n, 1);
-    // 1006008
-
-    console.log(aRange)
-
-    return null
-  }
+import React, { useState } from "react"
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       count: 0,
+//       name: "alife"
+//     };
+//   }
+//   render() {
+//     const { count } = this.state;
+//     return (
+//       <div>
+//         Count: {count}
+//         <button onClick={() => this.setState({ count: count + 1 })}>+</button>
+//         <button onClick={() => this.setState({ count: count - 1 })}>-</button>
+//       </div>
+//     );
+//   }
+// }
+function App() {
+  let [count, setCount] = useState(1)
+  return (
+    <div>
+      <button onClick={() => {setCount(count-1)}}> - </button>
+      {count}
+      <button onClick={() => {setCount(count+1)}}> + </button>
+    </div>
+  )
 }
+
+export default App

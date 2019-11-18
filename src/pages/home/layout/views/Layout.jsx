@@ -9,7 +9,7 @@ import LayoutUI from './LayoutUI'
 @connect({
   mapState: (state) => {
     return {
-      checked: state.layout.checked
+      checked: state.getIn(['layout', 'checked'])
     }
   }
 })

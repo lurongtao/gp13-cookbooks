@@ -9,13 +9,13 @@ export default (props) => {
     <div>
       <SwiperWrap>
         {
-          props.list.length > 0 && (
+          props.list.size > 0 && (
             <Carousel
               autoplay={true}
               infinite
             >
               {
-                props.list.slice(0, 5).map((value) => {
+                props.list.toJS().slice(0, 5).map((value) => {
                   return <img key={value.id} src={value.img} alt={value.name}/>
                 })
               }
