@@ -129,4 +129,5 @@ seq.reduce
 
 6、fromJS(), is(), Range()
 
-
+笔记：
+http://note.youdao.com/noteshare?id=86fb17ce7458df2701e3474ecf10366b
