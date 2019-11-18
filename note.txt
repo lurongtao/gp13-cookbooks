@@ -90,3 +90,43 @@ yarn mock:be
 2019-11-15
 https://reactcommunity.org/react-transition-group/
 
+2019-11-18
+1、数据类型
+Map
+List
+Seq
+Set
+
+2、判断对象相等
+===
+equals()
+is()
+
+3、Map方法
+map1 = map
+map.set()
+map.setIn()
+map.get()
+map.getIn()
+map.updateIn()
+map.withMutation()
+map.merge()
+map.map()
+map.toJS()
+
+4、List方法
+map.concat()
+map.push()
+map.merge()
+
+5、Seq
+Seq是惰性的
+seq.filter()
+seq.map()
+seq.flip()
+seq.take()
+seq.reduce
+
+6、fromJS(), is(), Range()
+
+
