@@ -12,7 +12,7 @@ export default (props) => {
         {
           props.list.slice(0, 10).map((value, index) => {
             return (
-              <li key={value.id}>
+              <li onClick={props.onItemClick} key={value.id}>
                 <dl>
                   <dt>
                     <img src={value.img} alt=""/>

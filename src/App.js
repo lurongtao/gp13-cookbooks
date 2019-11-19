@@ -16,7 +16,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/index" component={Layout}></Route>
             <Route path="/list" component={List}></Route>
-            <Route path="/detail" component={Detail}></Route>
+            <Route path="/detail" render={() => <Detail title={19}></Detail>}></Route>
             <Redirect from="/" to="/index"></Redirect>
           </Switch>
         </BrowserRouter>
