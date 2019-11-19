@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useCallback } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
@@ -10,22 +10,16 @@ const mapState = (state) => {
   }
 }
 
-@connect(mapState)
-@withRouter
-class Top10 extends Component {
-  async componentDidMount() {
-    
-  }
-
-  handleItemClick = () => {
-    this.props.history.push('/detail')
-  }
-
-  render() {
-    return (
-      <Top10UI onItemClick={this.handleItemClick} { ...this.props }></Top10UI>
-    )
-  }
+const Top10 = (props) => {
+  const handleItemClick = useCallback(
+    () => {
+      props.history.push('/detail')
+    },
+    [props.history],
+  )
+  return (
+    <Top10UI onItemClick={handleItemClick} { ...props }></Top10UI>
+  )
 }
 
-export default Top10
+export default withRouter(connect(mapState)(Top10))
