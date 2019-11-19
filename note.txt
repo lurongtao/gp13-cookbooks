@@ -131,3 +131,5 @@ seq.reduce
 
 笔记：
 http://note.youdao.com/noteshare?id=86fb17ce7458df2701e3474ecf10366b
+
+http://note.youdao.com/noteshare?id=22a95e6ecf53720bb40252b0e1f431fd
